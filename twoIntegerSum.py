@@ -3,10 +3,9 @@ class Solution:
 
         count = {}
 
-        for i in range(len(nums)):
-            count[nums[i]] = i
-
-        for index, val in enumerate(count):
+        for index, val in enumerate(nums):
             inverse = target - val
-            if inverse in count and count[inverse] != index:
-                return sorted([index, count[target - val]])
+
+            if inverse in count:
+                return [count[inverse], index]
+            count[val] = index

@@ -27,12 +27,13 @@
 from typing import List
 
 
+
 def mergeIntervals(intervals: List[List[int]]) -> List[List[int]]:
 
     intervals.sort(key=lambda interval: interval[0])
 
     result = [intervals[0]]  # Start with first interval
-
+ 
     for i in range(1, len(intervals)):
         current = intervals[i]
         last_merged = result[-1]  # The last interval in result
